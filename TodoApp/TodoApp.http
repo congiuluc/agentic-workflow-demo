@@ -1,0 +1,38 @@
+@TodoApp_HostAddress = http://localhost:5048
+
+GET {{TodoApp_HostAddress}}/api/todos
+Accept: application/json
+
+### Get a single todo by ID
+GET {{TodoApp_HostAddress}}/api/todos/1
+Accept: application/json
+
+### Create a new todo
+POST {{TodoApp_HostAddress}}/api/todos
+Content-Type: application/json
+
+{
+  "title": "Buy groceries",
+  "description": "Milk, eggs, bread"
+}
+
+### Create another todo
+POST {{TodoApp_HostAddress}}/api/todos
+Content-Type: application/json
+
+{
+  "title": "Clean the house"
+}
+
+### Update a todo
+PUT {{TodoApp_HostAddress}}/api/todos/1
+Content-Type: application/json
+
+{
+  "title": "Buy groceries",
+  "description": "Milk, eggs, bread, butter",
+  "isCompleted": true
+}
+
+### Delete a todo
+DELETE {{TodoApp_HostAddress}}/api/todos/1
