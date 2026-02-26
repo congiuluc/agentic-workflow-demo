@@ -33,6 +33,7 @@ public class TodoRepository(TodoDbContext context) : ITodoRepository
         existing.Title = item.Title;
         existing.Description = item.Description;
         existing.IsCompleted = item.IsCompleted;
+        existing.DueDate = item.DueDate;
 
         await context.SaveChangesAsync();
         return existing;

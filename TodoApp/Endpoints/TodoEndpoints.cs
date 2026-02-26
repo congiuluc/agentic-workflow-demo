@@ -27,7 +27,8 @@ public static class TodoEndpoints
             var item = new TodoItem
             {
                 Title = request.Title,
-                Description = request.Description
+                Description = request.Description,
+                DueDate = request.DueDate
             };
 
             var created = await repository.CreateAsync(item);
@@ -40,7 +41,8 @@ public static class TodoEndpoints
             {
                 Title = request.Title,
                 Description = request.Description,
-                IsCompleted = request.IsCompleted
+                IsCompleted = request.IsCompleted,
+                DueDate = request.DueDate
             };
 
             var updated = await repository.UpdateAsync(id, item);
